@@ -25,6 +25,8 @@ My zombie map
 <div id="zombie_map"></div>
 <script>
     var zombie_map;
+	
+    var old_position;
 
     var data = `32.85111161732699 35.462566998672514 hospital.png
 
@@ -55,6 +57,13 @@ My zombie map
             center: {lat: 32.85136398413493, lng: 35.46309271163943}
         });
 
+	var marker = new google.maps.Marker({	
+	position: {lat: 32.85136398413493, lng: 35.46309271163943},
+	map: zombie_map,
+	icon: "player.png"
+	});
+
+	    
     for(var i=0; i < markers.length; i++){
 
     var marker_data = markers[i].trim();
